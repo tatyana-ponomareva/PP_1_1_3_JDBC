@@ -4,11 +4,15 @@ import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class Main {
+    public static final Logger logger = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
+
 
         UserServiceImpl userService = new UserServiceImpl();
         userService.createUsersTable();
@@ -18,7 +22,8 @@ public class Main {
         userService.saveUser("Катя", "Белк", (byte)40);
 
         List<User> users = userService.getAllUsers();
-        System.out.println("Список всех пользователей:");
+        //System.out.println("Список всех пользователей:");
+        logger.info("Список всех пользователей:");
         for (User user : users) {
             System.out.println(user.toString());
         }
