@@ -65,10 +65,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
         try (Connection conn = getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM users WHERE id = ?")) {
             preparedStatement.setLong(1, id);
-            //System.out.println("Пользователь по id удалился");
             logger.info("Пользователь по id удалился");
         } catch (SQLException e) {
-            //System.out.println("При удаления пользователя по id произошло исключение" + e.getMessage());
             logger.error("При удаления пользователя по id произошло исключение" + e.getMessage());
         }
     }
