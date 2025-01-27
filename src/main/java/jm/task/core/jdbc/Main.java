@@ -1,9 +1,7 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserServiceImpl;
-import jm.task.core.jdbc.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +20,6 @@ public class Main {
         userService.saveUser("Катя", "Белк", (byte)40);
 
         List<User> users = userService.getAllUsers();
-        //System.out.println("Список всех пользователей:");
         logger.info("Список всех пользователей:");
         for (User user : users) {
             System.out.println(user.toString());

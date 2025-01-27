@@ -103,7 +103,6 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
              PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM users")) {
 
             preparedStatement.executeUpdate();
-            System.out.println("Пользователи удалились из таблицы");
             logger.info("Пользователи удалились из таблицы");
         } catch (SQLException e) {
             System.out.println("При очистки таблицы произошло исключение" + e);
